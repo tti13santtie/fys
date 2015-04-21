@@ -1,1 +1,5 @@
 Fysiikka.sdf
+*.tlog
+*.log
+Fysiikka/Debug/vc120.idb
+*.pdb

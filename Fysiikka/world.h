@@ -6,21 +6,15 @@ namespace fys
 	class world
 	{
 	public:
-		world()
-		{
-			window = new sf::RenderWindow(sf::VideoMode(200, 200), "Fysiikkaa");
-
-		};
+		world(sf::RenderWindow * wnd):window(wnd){};
 		~world(){};
-		bool update()
+		bool update(sf::Time elapsed)
 		{
-			window->clear();
 			for (std::vector<object*>::iterator it = objects.begin(); it != objects.end(); it++)
 			{
-				(*it)->update(window);
+				(*it)->update(window, elapsed);
 			}
-			window->display();
-			return true;
+			return false;
 		};
 		void addObject(object * obj)
 		{
